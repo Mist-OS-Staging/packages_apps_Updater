@@ -16,4 +16,15 @@
 -->
 <resources>
     <bool name="config_hideRecoveryUpdate">false</bool>
+
+    <string name="config_support_forum" translatable="false"></string>
+    <!-- Official MistOS support group -->
+    <string name="config_support_telegram" translatable="false">https://t.me/MistOSDiscussion</string>
+    <string name="config_support_recovery" translatable="false"></string>
+    <string name="config_support_paypal" translatable="false">https://www.paypal.com/paypalme/ShukakuZa?country.x=IN&amp;locale.x=en_GB</string>
+    <!-- "Buy me a coffee" chip (Ko-fi / Buy Me a Coffee page). Empty = hidden. -->
+    <string name="config_support_buymeacoffee" translatable="false">https://ko-fi.com/zabuka_zuzu</string>
+    <!-- UPI ID for donations; opens any UPI app (GPay, PhonePe, Paytm...). -->
+    <string name="config_support_upi" translatable="false">zabukazuzu@ybl</string>
+    <string name="config_support_upi_name" translatable="false">Zabuka_Zuzu</string>
 </resources>

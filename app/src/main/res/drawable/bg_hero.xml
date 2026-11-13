@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Project Mist OS
+     SPDX-License-Identifier: Apache-2.0
+-->
+<!-- Hero header: full-bleed colour block with large rounded bottom corners. Tinted per state. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="#FFFFFFFF" />
+    <corners android:bottomLeftRadius="44dp" android:bottomRightRadius="44dp"
+        android:topLeftRadius="0dp" android:topRightRadius="0dp" />
+</shape>

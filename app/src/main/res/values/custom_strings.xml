@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2021-2023 crDroid Android Project
+     Copyright (C) 2026 Project Mist OS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -27,5 +28,108 @@
     <string name="current_build_type">Current build type: <xliff:g id="build_type" example="Type">%1$s</xliff:g></string>
 
     <string name="build_type_unknown">Unofficial or missing OTA info</string>
+
+    <!-- ===== MistOS Expressive redesign ===== -->
+    <string name="system_updates_title">System updates</string>
+
+    <string name="hero_up_to_date">You’re up\nto date</string>
+    <string name="hero_checking">Checking for\nupdates…</string>
+    <string name="hero_checking_subtitle">Looking for new MistOS builds for <xliff:g id="device" example="Pixel 6a">%1$s</xliff:g></string>
+    <string name="hero_current_build"><xliff:g id="version" example="MistOS 5.1-Beta">%1$s</xliff:g> · <xliff:g id="device" example="Pixel 6a">%2$s</xliff:g></string>
+    <string name="hero_new_update">New update</string>
+    <string name="hero_update_available">Update available</string>
+    <string name="hero_downloading">Downloading <xliff:g id="version" example="MistOS 5.1-Beta">%1$s</xliff:g></string>
+    <string name="hero_download_paused">Download paused · <xliff:g id="version" example="MistOS 5.1-Beta">%1$s</xliff:g></string>
+    <string name="hero_verifying">Verifying\nupdate…</string>
+    <string name="hero_verifying_subtitle">Checking the package signature and integrity</string>
+    <string name="hero_ready">Ready to\ninstall</string>
+    <string name="hero_ready_subtitle"><xliff:g id="version" example="MistOS 5.1-Beta">%1$s</xliff:g> is downloaded and verified</string>
+    <string name="hero_installing">Installing update</string>
+    <string name="hero_install_step">STEP <xliff:g id="step" example="1">%1$d</xliff:g> OF <xliff:g id="total" example="2">%2$d</xliff:g></string>
+    <string name="hero_keep_using"><xliff:g id="stage" example="Preparing for first boot">%1$s</xliff:g> · keep using your phone</string>
+    <string name="hero_installed">Update\ninstalled</string>
+    <string name="hero_installed_subtitle">Restart your <xliff:g id="device" example="Pixel 6a">%1$s</xliff:g> to finish updating to <xliff:g id="version" example="MistOS 5.1-Beta">%2$s</xliff:g></string>
+
+    <string name="stat_of">of <xliff:g id="total" example="3.1 GB">%1$s</xliff:g></string>
+    <string name="stat_speed">Speed</string>
+    <string name="stat_speed_value"><xliff:g id="speed" example="12.4 MB">%1$s</xliff:g>/s</string>
+    <string name="stat_left">Left</string>
+    <string name="stat_unknown">—</string>
+
+    <string name="section_this_device">This device</string>
+    <string name="section_support">Support</string>
+    <string name="tile_version">MistOS version</string>
+    <string name="tile_device">Device · <xliff:g id="codename" example="bluejay">%1$s</xliff:g></string>
+    <string name="tile_android">Android</string>
+    <string name="tile_build_date">Build date</string>
+    <string name="tile_build_type">Build type</string>
+    <string name="tile_maintainer">Maintainer</string>
+    <string name="tile_unknown">Unknown</string>
+
+    <string name="changelog_title">Changelog</string>
+    <string name="changelog_summary">See everything that’s new in the latest build</string>
+    <string name="changelog_whats_new">What’s new</string>
+    <string name="changelog_close">Close</string>
+    <string name="changelog_failed">Couldn’t load the changelog. Check your connection and try again.</string>
+    <string name="changelog_status_loading">Fetching the latest changelog…</string>
+    <string name="changelog_status_saved">Saved copy · checking for changes…</string>
+    <string name="changelog_status_live">Live · up to date</string>
+    <string name="changelog_status_changed">Live · changelog just updated</string>
+    <string name="changelog_status_offline">Offline · showing saved changelog</string>
+    <string name="changelog_status_unreachable">Can’t reach the changelog server · retrying</string>
+
+    <string name="action_check_updates">Check for updates</string>
+    <string name="action_checking">Checking…</string>
+    <string name="action_download_install">Download &amp; install</string>
+    <string name="action_later">Later</string>
+    <string name="action_restart_now">Restart now</string>
+    <string name="action_cancel_installation">Cancel installation</string>
+    <string name="action_update_options">Update options</string>
+
+    <string name="support_forum">Forum</string>
+    <string name="support_telegram">Support group</string>
+    <string name="support_recovery">Recovery</string>
+    <string name="support_donate">PayPal</string>
+    <string name="support_coffee">Ko-fi</string>
+    <string name="support_upi">UPI</string>
+    <string name="support_sub_telegram">Telegram</string>
+    <string name="support_sub_forum">Discussion &amp; help</string>
+    <string name="support_sub_recovery">Recovery &amp; guides</string>
+    <string name="support_sub_paypal">Donate via PayPal</string>
+    <string name="support_sub_coffee">Buy me a coffee</string>
+    <string name="maintainer_role_official">Official maintainer · <xliff:g id="device" example="Pixel 6a">%1$s</xliff:g></string>
+    <string name="maintainer_role">Maintainer · <xliff:g id="device" example="Pixel 6a">%1$s</xliff:g></string>
+    <string name="maintainer_contact">Contact</string>
+    <string name="maintainer_verified">Verified maintainer</string>
+    <string name="upi_copied">UPI ID copied: <xliff:g id="upi" example="name@ybl">%1$s</xliff:g></string>
+    <string name="upi_label">UPI ID</string>
+    <string name="upi_pay_note">Donation for MistOS</string>
+
+    <string name="step_download">Download</string>
+    <string name="step_download_active">Continues in the background</string>
+    <string name="step_verify">Verify package</string>
+    <string name="step_install">Install</string>
+    <string name="step_install_ab">Installing to inactive slot</string>
+    <string name="step_restart">Restart</string>
+    <string name="step_restart_summary">First boot may take a few minutes while apps are optimized</string>
+    <string name="step_downloaded">Downloaded · <xliff:g id="size" example="3.1 GB">%1$s</xliff:g></string>
+    <string name="step_verified">Verified</string>
+    <string name="step_installed">Installed</string>
+
+    <string name="hint_wifi">Use Wi‑Fi for this <xliff:g id="size" example="3.1 GB">%1$s</xliff:g> download. Your apps and data stay as they are.</string>
+    <string name="hint_battery">Keep at least <xliff:g id="percent" example="30">%1$d</xliff:g>%% battery until it finishes</string>
+    <string name="hint_maintained_by">Maintained by <xliff:g id="maintainer" example="Zabuka_Zuzu">%1$s</xliff:g></string>
+
+    <string name="prefs_title">Update preferences</string>
+    <string name="prefs_summary">How MistOS checks, downloads and installs updates</string>
+    <string name="pref_auto_delete_summary">Frees storage after a successful install</string>
+    <string name="pref_metered_summary">Ask before downloading on mobile data</string>
+    <string name="pref_ab_perf_summary">Installs faster, may slow the phone meanwhile</string>
+    <string name="pref_recovery_summary">Also update the recovery partition</string>
+    <string name="pref_interval_never">Never</string>
+    <string name="pref_interval_daily">Daily</string>
+    <string name="pref_interval_weekly">Weekly</string>
+    <string name="pref_interval_monthly">Monthly</string>
+    <string name="action_done">Done</string>
 
 </resources>

@@ -138,7 +138,7 @@ public class ExportUpdateService extends Service {
         notificationStyle.setBigContentTitle(getString(R.string.dialog_export_title));
         notificationStyle.bigText(fileName);
         notificationBuilder.setStyle(notificationStyle);
-        notificationBuilder.setSmallIcon(R.drawable.ic_system_update);
+        notificationBuilder.setSmallIcon(R.drawable.ic_notification_mist);
 
         FileUtils.ProgressCallBack progressCallBack = new FileUtils.ProgressCallBack() {
             private long mLastUpdate = -1;

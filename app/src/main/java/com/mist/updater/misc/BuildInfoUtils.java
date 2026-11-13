@@ -27,7 +27,11 @@ public final class BuildInfoUtils {
     }
 
     public static String getBuildVersion() {
-        return SystemProperties.get(Constants.PROP_BUILD_VERSION);
+        String version = SystemProperties.get(Constants.PROP_BUILD_VERSION);
+        if (version == null || version.isEmpty()) {
+            version = SystemProperties.get(Constants.PROP_BUILD_VERSION_DISPLAY, "");
+        }
+        return version;
     }
 
     public static String getBuildType() {

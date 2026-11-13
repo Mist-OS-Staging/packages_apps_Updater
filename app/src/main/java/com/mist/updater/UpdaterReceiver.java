@@ -74,7 +74,7 @@ public class UpdaterReceiver extends BroadcastReceiver {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context,
                 INSTALL_ERROR_NOTIFICATION_CHANNEL)
                 .setContentIntent(intent)
-                .setSmallIcon(R.drawable.ic_system_update)
+                .setSmallIcon(R.drawable.ic_notification_mist)
                 .setContentTitle(context.getString(R.string.update_failed_notification))
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(buildInfo))
                 .setContentText(buildInfo);
