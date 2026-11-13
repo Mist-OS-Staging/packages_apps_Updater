@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="Theme.AppCompat.DayNight">
-        <item name="colorPrimary">@color/theme_primary</item>
-        <item name="colorPrimaryDark">@color/theme_primary_dark</item>
-        <item name="colorAccent">@color/theme_accent</item>
+    <!-- Material 3 with dynamic colour: containers, surfaces and accents come from the
+         wallpaper palette (system_accent1/2/3, system_neutral1/2) on Android 12+. -->
+    <style name="AppTheme" parent="Theme.Material3.DynamicColors.DayNight">
         <item name="windowActionModeOverlay">true</item>
         <item name="android:windowLightStatusBar">@bool/theme_is_light</item>
         <item name="android:windowLightNavigationBar">@bool/theme_is_light</item>
-        <item name="android:windowBackground">@color/background</item>
         <item name="alertDialogTheme">@style/AppTheme.AlertDialogTheme</item>
+        <item name="materialAlertDialogTheme">@style/AppTheme.AlertDialogTheme</item>
+        <item name="bottomSheetDialogTheme">@style/AppTheme.BottomSheet</item>
+        <item name="materialSwitchStyle">@style/Widget.Material3.CompoundButton.MaterialSwitch</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -17,9 +18,11 @@
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:enforceNavigationBarContrast">false</item>
+        <item name="android:windowBackground">?attr/colorSurface</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar" />
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.Material3.ActionBar" />
 
     <style name="TextAppearanceInverted" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textColor">@color/inverted</item>
@@ -34,7 +37,199 @@
         <item name="android:dropDownHorizontalOffset">-16dp</item>
     </style>
 
-    <style name="AppTheme.AlertDialogTheme" parent="Theme.AppCompat.DayNight.Dialog.Alert">
-        <item name="dialogCornerRadius">16dp</item>
+    <style name="AppTheme.AlertDialogTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="dialogCornerRadius">28dp</item>
+    </style>
+
+    <style name="AppTheme.BottomSheet" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppTheme.BottomSheet.Modal</item>
+    </style>
+
+    <style name="AppTheme.BottomSheet.Modal" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="backgroundTint">?attr/colorSurfaceContainerLow</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Updater.Sheet</item>
+    </style>
+
+    <style name="ShapeAppearance.Updater.Sheet" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">28dp</item>
+        <item name="cornerSizeTopRight">28dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+    <!-- ===== Expressive type ===== -->
+    <style name="TextAppearance.Updater.Hero" parent="TextAppearance.Material3.DisplayMedium">
+        <item name="android:textSize">44sp</item>
+        <item name="android:lineSpacingMultiplier">0.98</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextAppearance.Updater.HeroNumber" parent="TextAppearance.Updater.Hero">
+        <item name="android:textSize">112sp</item>
+        <item name="android:letterSpacing">-0.05</item>
+        <item name="android:fontFeatureSettings">tnum</item>
+    </style>
+
+    <style name="TextAppearance.Updater.Section" parent="TextAppearance.Material3.TitleSmall">
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="TextAppearance.Updater.TileLabel" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="TextAppearance.Updater.TileValue" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textFontWeight">500</item>
+    </style>
+
+    <!-- ===== Components ===== -->
+    <style name="Widget.Updater.Tile" parent="">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:minHeight">108dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:background">@drawable/bg_tile</item>
+    </style>
+
+    <style name="Widget.Updater.TileIcon" parent="">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/bg_circle</item>
+        <item name="android:backgroundTint">?attr/colorSecondaryContainer</item>
+        <item name="tint">?attr/colorOnSecondaryContainer</item>
+        <item name="android:importantForAccessibility">no</item>
+    </style>
+
+    <style name="Widget.Updater.Button.Big" parent="Widget.Material3.Button">
+        <item name="android:minHeight">64dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="cornerRadius">32dp</item>
+        <item name="iconSize">24dp</item>
+        <item name="iconPadding">10dp</item>
+        <item name="iconGravity">textStart</item>
+    </style>
+
+    <style name="Widget.Updater.Button.Big.Tonal" parent="Widget.Material3.Button.TonalButton">
+        <item name="android:minHeight">64dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="cornerRadius">32dp</item>
+        <item name="iconSize">24dp</item>
+        <item name="iconPadding">10dp</item>
+        <item name="iconGravity">textStart</item>
+    </style>
+
+    <style name="Widget.Updater.Button.Big.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:minHeight">64dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="cornerRadius">32dp</item>
+    </style>
+
+    <style name="Widget.Updater.Button.Square" parent="Widget.Material3.Button.IconButton.Filled.Tonal">
+        <item name="android:layout_width">64dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="cornerRadius">22dp</item>
+        <item name="iconSize">24dp</item>
+    </style>
+
+    <style name="Widget.Updater.Chip.Meta" parent="Widget.Material3.Chip.Assist">
+        <item name="chipBackgroundColor">?attr/colorSurfaceContainerHighest</item>
+        <item name="chipStrokeWidth">0dp</item>
+        <item name="chipCornerRadius">17dp</item>
+        <item name="chipIconSize">16dp</item>
+        <item name="chipIconTint">?attr/colorPrimary</item>
+        <item name="android:clickable">false</item>
+        <item name="android:focusable">false</item>
+    </style>
+
+    <!-- Coloured OFFICIAL / UNOFFICIAL badge. Colours are set from code per release type. -->
+    <style name="Widget.Updater.ReleaseBadge" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">26dp</item>
+        <item name="android:background">@drawable/bg_pill</item>
+        <item name="android:backgroundTint">?attr/colorPrimary</item>
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.LabelMedium</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:textFontWeight">700</item>
+        <item name="android:letterSpacing">0.06</item>
+    </style>
+
+    <style name="Widget.Updater.Button.Small" parent="Widget.Material3.Button">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="cornerRadius">24dp</item>
+        <item name="iconSize">18dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="Widget.Updater.Button.Small.Tonal" parent="Widget.Material3.Button.TonalButton">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="cornerRadius">24dp</item>
+        <item name="iconSize">18dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="android:maxLines">1</item>
+        <item name="backgroundTint">?attr/colorSurfaceContainerLowest</item>
+    </style>
+
+    <style name="Widget.Updater.Chip.Release" parent="Widget.Updater.Chip.Meta">
+        <item name="chipBackgroundColor">?attr/colorPrimary</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="chipIconTint">?attr/colorOnPrimary</item>
+        <item name="android:textFontWeight">700</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+
+    <!-- Changelog popup: full-window transparent dialog; the activity behind is blurred. -->
+    <style name="AppTheme.ChangelogDialog" parent="Theme.Material3.DynamicColors.DayNight.NoActionBar">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.18</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">always</item>
+    </style>
+
+    <style name="Widget.Updater.Chip.Support" parent="Widget.Material3.Chip.Assist">
+        <item name="chipBackgroundColor">?attr/colorSurfaceContainer</item>
+        <item name="chipStrokeWidth">0dp</item>
+        <item name="chipCornerRadius">20dp</item>
+        <item name="chipMinHeight">40dp</item>
+        <item name="chipIconSize">18dp</item>
+        <item name="chipIconTint">?attr/colorPrimary</item>
     </style>
 </resources>

@@ -27,7 +27,14 @@ public final class BuildInfoUtils {
     }
 
     public static String getBuildVersion() {
-        return SystemProperties.get(Constants.PROP_BUILD_VERSION);
+        String version = SystemProperties.get(Constants.PROP_BUILD_VERSION);
+        if (version == null || version.isEmpty()) {
+            // ro.mist.version.base is default_prop, which SELinux hides from
+            // non-system apps (e.g. the Android Studio debug build). The display
+            // version is readable by any app.
+            version = SystemProperties.get(Constants.PROP_BUILD_VERSION_DISPLAY, "");
+        }
+        return version;
     }
 
     public static String getBuildType() {

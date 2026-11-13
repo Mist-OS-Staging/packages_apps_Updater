@@ -131,7 +131,7 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
                 NotificationManager.IMPORTANCE_LOW);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context,
                 NEW_UPDATES_NOTIFICATION_CHANNEL);
-        notificationBuilder.setSmallIcon(R.drawable.ic_system_update);
+        notificationBuilder.setSmallIcon(R.drawable.ic_notification_mist);
         Intent notificationIntent = new Intent(context, UpdatesActivity.class);
         PendingIntent intent = PendingIntent.getActivity(context, 0, notificationIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);

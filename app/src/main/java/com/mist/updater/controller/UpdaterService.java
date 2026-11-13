@@ -96,7 +96,7 @@ public class UpdaterService extends Service {
         mNotificationManager.createNotificationChannel(notificationChannel);
         mNotificationBuilder = new NotificationCompat.Builder(this,
                 ONGOING_NOTIFICATION_CHANNEL);
-        mNotificationBuilder.setSmallIcon(R.drawable.ic_system_update);
+        mNotificationBuilder.setSmallIcon(R.drawable.ic_notification_mist);
         mNotificationBuilder.setShowWhen(false);
         mNotificationStyle = new NotificationCompat.BigTextStyle();
         mNotificationBuilder.setStyle(mNotificationStyle);
@@ -272,7 +272,7 @@ public class UpdaterService extends Service {
                 String text = getString(R.string.download_starting_notification);
                 mNotificationStyle.bigText(text);
                 mNotificationBuilder.setStyle(mNotificationStyle);
-                mNotificationBuilder.setSmallIcon(android.R.drawable.stat_sys_download);
+                mNotificationBuilder.setSmallIcon(R.drawable.ic_notification_mist);
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(true);
                 mNotificationBuilder.setAutoCancel(false);
@@ -285,7 +285,7 @@ public class UpdaterService extends Service {
                 String text = getString(R.string.downloading_notification);
                 mNotificationStyle.bigText(text);
                 mNotificationBuilder.setStyle(mNotificationStyle);
-                mNotificationBuilder.setSmallIcon(android.R.drawable.stat_sys_download);
+                mNotificationBuilder.setSmallIcon(R.drawable.ic_notification_mist);
                 mNotificationBuilder.addAction(android.R.drawable.ic_media_pause,
                         getString(R.string.pause_button),
                         getPausePendingIntent(update.getDownloadId()));
@@ -338,7 +338,7 @@ public class UpdaterService extends Service {
                 mNotificationBuilder.setProgress(0, 0, true);
                 mNotificationStyle.setSummaryText(null);
                 mNotificationBuilder.setStyle(mNotificationStyle);
-                mNotificationBuilder.setSmallIcon(R.drawable.ic_system_update);
+                mNotificationBuilder.setSmallIcon(R.drawable.ic_notification_mist);
                 mNotificationBuilder.mActions.clear();
                 String text = getString(R.string.verifying_download_notification);
                 mNotificationStyle.bigText(text);
@@ -349,7 +349,7 @@ public class UpdaterService extends Service {
             case VERIFIED: {
                 stopForeground(STOP_FOREGROUND_DETACH);
                 mNotificationBuilder.setStyle(null);
-                mNotificationBuilder.setSmallIcon(R.drawable.ic_system_update);
+                mNotificationBuilder.setSmallIcon(R.drawable.ic_notification_mist);
                 mNotificationBuilder.setProgress(0, 0, false);
                 String text = getString(R.string.download_completed_notification);
                 mNotificationBuilder.setContentText(text);
@@ -377,7 +377,7 @@ public class UpdaterService extends Service {
             case INSTALLING: {
                 mNotificationBuilder.mActions.clear();
                 mNotificationBuilder.setStyle(mNotificationStyle);
-                mNotificationBuilder.setSmallIcon(R.drawable.ic_system_update);
+                mNotificationBuilder.setSmallIcon(R.drawable.ic_notification_mist);
                 mNotificationBuilder.setProgress(0, 0, false);
                 mNotificationStyle.setSummaryText(null);
                 String text = UpdateInstaller.isInstalling() ?
@@ -401,7 +401,7 @@ public class UpdaterService extends Service {
                 stopForeground(STOP_FOREGROUND_DETACH);
                 mNotificationBuilder.mActions.clear();
                 mNotificationBuilder.setStyle(null);
-                mNotificationBuilder.setSmallIcon(R.drawable.ic_system_update);
+                mNotificationBuilder.setSmallIcon(R.drawable.ic_notification_mist);
                 mNotificationBuilder.setProgress(0, 0, false);
                 String text = getString(R.string.installing_update_finished);
                 mNotificationBuilder.setContentText(text);

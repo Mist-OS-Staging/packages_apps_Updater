@@ -41,6 +41,8 @@ public final class Constants {
     public static final String PROP_AB_DEVICE = "ro.build.ab_update";
     public static final String PROP_BUILD_DATE = "ro.build.date.utc";
     public static final String PROP_BUILD_VERSION = "ro.mist.version.base";
+    public static final String PROP_BUILD_VERSION_DISPLAY = "ro.mist.version_display";
+    public static final String PROP_RELEASE_TYPE = "ro.mist.buildtype";
     public static final String PROP_DEVICE = "ro.mist.device";
     public static final String PROP_PACKAGE_TYPE = "ro.mist.packagetype";
     public static final String PROP_NEXT_DEVICE = "ro.updater.next_device";

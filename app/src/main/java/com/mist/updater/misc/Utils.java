@@ -65,6 +65,8 @@ public class Utils {
     private static String mTelegram;
     private static String mRecovery;
     private static String mPaypal;
+    private static String mBuyMeACoffee;
+    private static String mUpi;
 
     private Utils() {
     }
@@ -99,12 +101,15 @@ public class Utils {
         update.setDownloadUrl(object.getString("download"));
         update.setVersion(object.getString("version"));
         update.setBuildType(object.optString("buildtype", ""));
-        mMaintainer = object.getString("maintainer");
-        mBuildType = object.getString("buildtype");
-        mForum = object.getString("forum");
-        mTelegram = object.getString("telegram");
-        mRecovery = object.getString("recovery");
-        mPaypal = object.getString("paypal");
+        // Optional maintainer/support fields: a missing key must not drop the whole update.
+        mMaintainer = object.optString("maintainer", "");
+        mBuildType = object.optString("buildtype", "");
+        mForum = object.optString("forum", "");
+        mTelegram = object.optString("telegram", "");
+        mRecovery = object.optString("recovery", "");
+        mPaypal = object.optString("paypal", "");
+        mBuyMeACoffee = object.optString("buymeacoffee", "");
+        mUpi = object.optString("upi", "");
         return update;
     }
 
@@ -443,6 +448,35 @@ public class Utils {
         return mMaintainer;
     }
 
+    /** Release type of the running build (ro.mist.buildtype), e.g. OFFICIAL. */
+    public static String getCurrentReleaseType() {
+        String type = SystemProperties.get(Constants.PROP_RELEASE_TYPE, "");
+        return type == null || type.isEmpty() ? null : type.toUpperCase(java.util.Locale.ROOT);
+    }
+
+    /**
+     * Release type from an OTA file name such as
+     * MistOS-5.1-Beta-17.0-MINI-20261017-0914-bluejay-OFFICIAL.zip, or null.
+     */
+    public static String getReleaseTypeFromName(String fileName) {
+        if (fileName == null) {
+            return null;
+        }
+        String upper = fileName.toUpperCase(java.util.Locale.ROOT);
+        if (upper.contains("UNOFFICIAL")) {
+            return "UNOFFICIAL";
+        } else if (upper.contains("OFFICIAL")) {
+            return "OFFICIAL";
+        } else if (upper.contains("COMMUNITY")) {
+            return "COMMUNITY";
+        }
+        return null;
+    }
+
+    public static boolean isOfficialRelease(String releaseType) {
+        return "OFFICIAL".equalsIgnoreCase(releaseType);
+    }
+
     public static String getBuildType() {
         return mBuildType;
     }
@@ -461,5 +495,13 @@ public class Utils {
 
     public static String getPaypal() {
         return mPaypal;
+    }
+
+    public static String getBuyMeACoffee() {
+        return mBuyMeACoffee;
+    }
+
+    public static String getUpi() {
+        return mUpi;
     }
 }
